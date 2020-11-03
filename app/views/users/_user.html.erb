@@ -1,6 +1,21 @@
+<% if user != current_user%>
 <li>
-  Name: <%= user.name %>
-  <span class="profile-link">
-    <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-  </span>
+    Name: <%=user.name%>
+    <span class='profile-link'>
+        <%= link_to 'See Profile', user_path(user), class: 'profile-link'%>
+        <% if current_user.friend?(user) %>
+        <p> Friend</p>
+        <%= link_to "Unfriend", unfriend_path(current_user.id, user.id), method: "POST" %>
+        <% elsif current_user.friend_requests.include?(user)%>
+        <%= link_to "confirm", confirmfriendrequest_path(Friendship.find_by(user_id: user.id).id) , method: "POST" %>
+        <%= link_to "cancel", cancelfriendrequest_path(Friendship.find_by(user_id: user.id).id) , method: "POST" %>
+        <% elsif user.friend_requests.include?(current_user)%>
+        <p> request sent
+        </p>
+        <% else %>
+        <%= link_to "Add Friend " , sendfriendrequest_path(current_user.id, user.id), method: "POST"%>
+        <% end %>
+
+    </span>
 </li>
+<%end%>
