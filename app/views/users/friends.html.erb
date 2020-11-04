@@ -1,8 +1,10 @@
 <section class="friends-section">
     <ul class="friends-list">
-        <% @friends.each do |friend| %>
+        <% if @friends != [nil] %>
+        <% @friends.each do |friend|  %>
         <%= friend.name %>
         <%= link_to "See profile", user_path(friend)  %>
-        <% end %>
+        <% end  %>
+        <% end  %>
     </ul>
 </section>
