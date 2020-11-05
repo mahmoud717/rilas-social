@@ -1,15 +1,15 @@
-# Scaffold for social media app with Ruby on Rails
+# Social media app with Ruby on Rails
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This repo includes code for social media app with basic styling. 
 
 ## Built With 
 
-- Ruby v2.7.0
+- Ruby v2.7.1
 - Ruby on Rails v5.2.4
 
 ## Live Demo
 
-TBA
+https://socialize717.herokuapp.com/users/sign_in
 
 
 ## Getting Started
