@@ -12,7 +12,6 @@ RSpec.describe User, type: :model do
       expect(User.second).to eq(@user2)
     end
 
-
     it 'can have pending friendship requests' do
       expect(@user1.pending_friends).to eq(@user2.pending_friends)
     end
