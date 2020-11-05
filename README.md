@@ -9,7 +9,7 @@
 
 ## Live Demo
 
-https://socialize717.herokuapp.com/users/sign_in
+https://socialize717.herokuapp.com
 
 
 ## Getting Started
