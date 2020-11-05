@@ -12,6 +12,6 @@ class UsersController < ApplicationController
 
   def friends
     @friends = current_user.friendships.map { |friendship| friendship.friend if friendship.confirmed }
-    @friends.compact
+    @friends = [] if @friends == [nil]
   end
 end
