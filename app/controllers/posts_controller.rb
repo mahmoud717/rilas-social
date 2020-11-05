@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def timeline_posts
-    @timeline_posts ||= Post.where('user_id IN (?)', user_and_friends)
+    @timeline_posts ||= Post.where('user_id IN (?)', user_and_friends).order(created_at: :desc)
   end
 
   def user_and_friends
